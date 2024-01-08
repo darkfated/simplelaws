@@ -1,7 +1,7 @@
 # SimpleLaws
 Law system for Garry's Mod
 
-o open the edit menu, enter the `simplelaws_open` console command
+To open the edit menu, enter the `simplelaws_open` console command
 
 🔧 [Mantle](https://github.com/darkfated/mantle): in order for the system to work, you need to use this Gmod library
 
