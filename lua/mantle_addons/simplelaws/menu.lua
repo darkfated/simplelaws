@@ -86,7 +86,7 @@ local function Create()
     menu.bottom_panel.btn_reset:Dock(FILL)
     menu.bottom_panel.btn_reset:DockMargin(3, 0, 0, 0)
 
-    menu.bottom_panel.btn_reset:SetText('Сбросить законы')
+    menu.bottom_panel.btn_reset:SetText('Сбросить устав')
     menu.bottom_panel.btn_reset.DoClick = function()
         net.Start('SimpleLaws-Reset')
         net.SendToServer()

@@ -2,19 +2,16 @@
     * SimpleLaws *
     GitHub: https://github.com/darkfated/simplelaws
     Author's discord: darkfated
-]]
+]]--
 
 local function run_scripts()
-    local cl = SERVER and AddCSLuaFile or include
-    local sv = SERVER and include or function() end
+    Mantle.run_sv('config.lua')
 
-    sv('config.lua')
+    Mantle.run_cl('nets.lua')
+    Mantle.run_sv('nets.lua')
 
-    cl('nets.lua')
-    sv('nets.lua')
-
-    cl('hud.lua')
-    cl('menu.lua')
+    Mantle.run_cl('hud.lua')
+    Mantle.run_cl('menu.lua')
 end
 
 local function init()

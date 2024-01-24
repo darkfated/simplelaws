@@ -49,7 +49,7 @@ if SERVER then
 
         SimpleLaws_data[id] = text
 
-        DarkRP.notifyAll(3, 4, 'Мэр обновил закон #' .. id)
+        DarkRP.notifyAll(3, 4, 'Директор обновил устав #' .. id)
 
         UpdateForPlayers()
     end)
@@ -100,14 +100,14 @@ if SERVER then
         end
 
         if table.Count(SimpleLaws_data) == SimpleLawsConfig.max_count then
-            pl:ChatPrint('Больше законов нельзя сделать!')
+            pl:ChatPrint('Больше уставов нельзя сделать!')
 
             return
         end
 
         SimpleLaws_data[#SimpleLaws_data + 1] = text
 
-        DarkRP.notifyAll(3, 4, 'Мэр создал закон. Ознакомтесь!')
+        DarkRP.notifyAll(3, 4, 'Директор создал устав. Ознакомтесь!')
 
         UpdateForPlayers()
     end)
