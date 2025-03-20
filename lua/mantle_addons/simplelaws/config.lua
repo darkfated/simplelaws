@@ -11,4 +11,4 @@ SimpleLawsConfig.max_count = 9
 SimpleLawsConfig.default_law_count = 4
 
 // Какая профессия может изменять законы (указать job.command)
-SimpleLawsConfig.job_access = 'job_director'
+SimpleLawsConfig.job_access = 'mayor'
