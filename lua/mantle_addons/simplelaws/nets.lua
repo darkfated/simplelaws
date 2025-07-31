@@ -1,4 +1,6 @@
 if SERVER then
+    local color_error = Color(255, 80, 80)
+
     util.AddNetworkString('SimpleLaws-ToClient')
     util.AddNetworkString('SimpleLaws-Update')
     util.AddNetworkString('SimpleLaws-Delete')
@@ -34,16 +36,14 @@ if SERVER then
         end
 
         if id <= SimpleLawsConfig.default_law_count then
-            pl:ChatPrint('Это нельзя редактировать.')
-
+            Mantle.notify(pl, color_error, 'Законы', 'Это нельзя редактировать.')
             return
         end
 
         local len_text = string.len(text)
 
         if len_text < SimpleLawsConfig.min_len_law or len_text > SimpleLawsConfig.max_len_law then
-            pl:ChatPrint('Разрешённая длинна от ' .. SimpleLawsConfig.min_len_law .. ' до ' .. SimpleLawsConfig.max_len_law)
-            
+            Mantle.notify(pl, color_error, 'Законы', 'Разрешённая длинна от ' .. SimpleLawsConfig.min_len_law .. ' до ' .. SimpleLawsConfig.max_len_law)
             return
         end
 
@@ -68,8 +68,7 @@ if SERVER then
         end
 
         if id <= SimpleLawsConfig.default_law_count then
-            pl:ChatPrint('Это нельзя удалять.')
-
+            Mantle.notify(pl, color_error, 'Законы', 'Стандартный закон невозможно удалить.')
             return
         end
 
@@ -94,14 +93,12 @@ if SERVER then
         local len_text = string.len(text)
 
         if len_text < SimpleLawsConfig.min_len_law or len_text > SimpleLawsConfig.max_len_law then
-            pl:ChatPrint('Разрешённая длинна от ' .. SimpleLawsConfig.min_len_law .. ' до ' .. SimpleLawsConfig.max_len_law)
-            
+            Mantle.notify(pl, color_error, 'Законы', 'Разрешённая длинна от ' .. SimpleLawsConfig.min_len_law .. ' до ' .. SimpleLawsConfig.max_len_law)
             return
         end
 
         if table.Count(SimpleLaws_data) == SimpleLawsConfig.max_count then
-            pl:ChatPrint('Больше законов нельзя сделать!')
-
+            Mantle.notify(pl, color_error, 'Законы', 'Достигнуто максимальное кол-во законов!')
             return
         end
 
