@@ -120,6 +120,19 @@ if SERVER then
 
         UpdateForPlayers()
     end)
+
+    local chatCommands = {
+        ['/laws'] = true,
+        ['/законы'] = true,
+        ['!laws'] = true,
+        ['!законы'] = true
+    }
+    hook.Add('PlayerSay', 'SimpleLaws.ChatCommand', function(pl, text)
+        if chatCommands[text:lower()] then
+            pl:ConCommand('simplelaws_open')
+            return ''
+        end
+    end)
 else
     net.Receive('SimpleLaws-ToClient', function()
         local tbl = net.ReadTable()
