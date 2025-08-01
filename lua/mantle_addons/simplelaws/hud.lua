@@ -1,5 +1,4 @@
 local scrw, scrh = ScrW(), ScrH()
-local color_gray = Color(220, 220, 220)
 
 hook.Add('HUDPaint', 'SimpleLaws.Hud', function()
     if g_SpawnMenu:IsVisible() then
@@ -26,7 +25,7 @@ hook.Add('HUDPaint', 'SimpleLaws.Hud', function()
         local lines = string.Explode('\n', wrappedText)
 
         for j, line in ipairs(lines) do
-            draw.SimpleText(line, 'Fated.17', scrw - maxWidth - 2, yPos, color_gray, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP)
+            draw.SimpleText(line, 'Fated.17', scrw - maxWidth - 2, yPos, Mantle.color.gray, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP)
 
             yPos = yPos + lineHeight
     
